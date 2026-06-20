@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trang Đăng Nhập</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background:linear-gradient(135deg,#4facfe,#00f2fe);
+    }
+
+    .container{
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        width:350px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h2{
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    .input-group{
+        margin-bottom:15px;
+    }
+
+    label{
+        display:block;
+        margin-bottom:5px;
+    }
+
+    input{
+        width:100%;
+        padding:10px;
+        border:1px solid #ccc;
+        border-radius:8px;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        background:#4facfe;
+        color:white;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        font-size:16px;
+    }
+
+    button:hover{
+        background:#2f8df5;
+    }
+
+    #result{
+        text-align:center;
+        margin-top:15px;
+        font-weight:bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Đăng Nhập Hệ Thống</h2>
+
+    <div class="input-group">
+        <label>Tên đăng nhập</label>
+        <input type="text" id="user">
+    </div>
+
+    <div class="input-group">
+        <label>Mật khẩu</label>
+        <input type="password" id="pass">
+    </div>
+
+    <button onclick="dangNhap()">Đăng nhập</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function dangNhap() {
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
+    let result = document.getElementById("result");
+
+    if(user === "" || pass === ""){
+        result.innerHTML = "Vui lòng nhập đầy đủ thông tin!";
+        result.style.color = "orange";
+        return;
+    }
+
+    if(user === "admin" && pass === "123456"){
+        result.innerHTML = "Đăng nhập thành công!";
+        result.style.color = "green";
+    }
+    else{
+        result.innerHTML = "Tên đăng nhập hoặc mật khẩu không đúng!";
+        result.style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>
