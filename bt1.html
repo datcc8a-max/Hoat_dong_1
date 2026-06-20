@@ -87,24 +87,27 @@
         <input type="password" id="pass">
     </div>
 
-    <button onclick="dangNhap()">Đăng nhập</button>
+    <button onclick="()">Đăng nhập</button>
 
-    <p id="result"></p>
+    <p id="message"></p>
 </div>
 
 <script>
-function dangNhap() {
+function dangNhap() 
+while(true)
+{
+}{
     let user = document.getElementById("user").value;
     let pass = document.getElementById("pass").value;
     let result = document.getElementById("result");
 
-    if(user === "" || pass === ""){
+    if(user === "" ){
         result.innerHTML = "Vui lòng nhập đầy đủ thông tin!";
         result.style.color = "orange";
         return;
     }
 
-    if(user === "admin" && pass === "123456"){
+    if(user === "admin" && pass === "12345"){
         result.innerHTML = "Đăng nhập thành công!";
         result.style.color = "green";
     }
